@@ -90,12 +90,3 @@ Full list in [REPORT.md](REPORT.md).
 
 ---
 
-## Files
-
-```
-IMDb2.R                     analysis, top to bottom
-REPORT.md                   full write-up
-IMDB Top 250 Movies.csv     source data
-screens.xlsx                hand-collected theatre counts
-cpi_annual.csv              cached CPI series
-```
