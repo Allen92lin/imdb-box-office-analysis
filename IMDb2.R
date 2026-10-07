@@ -15,8 +15,7 @@ set.seed(42)
 
 # 1. IMPORT
 
-IMDb250 <- read.csv("~/Downloads/Work/Project Codes/IMDB Top 250 Movies.csv",
-                    stringsAsFactors = FALSE)
+IMDb250 <- read.csv("IMDB Top 250 Movies.csv", stringsAsFactors = FALSE)
 
 df <- IMDb250 %>%
   select(
@@ -158,7 +157,7 @@ hist(df$log_box,         breaks = 30, main = "Log (symmetric)")
 # by hand for post-1980 films. BOM indexes by US release year, which
 # differs from the Kaggle release year for several foreign titles.
 
-screens <- read_excel("~/Downloads/Work/Project Codes/screens.xlsx")
+screens <- read_excel("screens.xlsx")
 
 df$theaters <- NULL   # same re-run guard as the CPI merge above
 df <- merge(df, screens[, c("title", "theaters")], by = "title", all.x = TRUE)
