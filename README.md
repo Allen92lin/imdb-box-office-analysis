@@ -56,8 +56,6 @@ Update the two file paths at the top (`IMDB Top 250 Movies.csv`,
 | [Box Office Mojo](https://www.boxofficemojo.com) yearly charts | Widest-release theatre counts, read off by hand for 135 post-1980 films |
 | [FRED series CPIAUCNS](https://fred.stlouisfed.org/series/CPIAUCNS) | Annual CPI 1913–2025, fetched by the script |
 
-`screens.xlsx` is the hand-collected theatre data. There is no free API for
-theatre counts, so these were looked up year by year.
 
 ---
 
