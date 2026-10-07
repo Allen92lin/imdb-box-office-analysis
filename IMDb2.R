@@ -162,6 +162,15 @@ screens <- read_excel("screens.xlsx")
 df$theaters <- NULL   # same re-run guard as the CPI merge above
 df <- merge(df, screens[, c("title", "theaters")], by = "title", all.x = TRUE)
 df$theaters     <- as.numeric(df$theaters)
+df$theaters     <- as.numeric(df$theaters)
+
+# Excel re-encodes the accented and interpunct characters every time the
+# sheet is saved, so these two titles never match on the merge. Patch them
+# by ASCII prefix, which is stable across encodings.
+df$theaters[grepl("^Am",   df$title) & df$release_year == 2001] <- 303
+df$theaters[grepl("^WALL", df$title) & df$release_year == 2008] <- 3992
+
+df$log_theaters <- log(df$theaters)
 df$log_theaters <- log(df$theaters)
 
 cat("Theatre counts filled:", sum(!is.na(df$theaters)), "\n")
